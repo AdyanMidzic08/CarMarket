@@ -1,5 +1,6 @@
 public class Game {
     private Player player;
+    private CarShop shop;
 
     public void init() {
 

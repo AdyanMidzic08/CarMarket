@@ -8,11 +8,11 @@ public class Player {
         return -1;
     }
 
-    public void buy(CarType type, int amount) {
+    public void buy(CarShop shop, CarType type, int amount) {
 
     }
 
-    public void sell(CarType type, int amount) {
+    public void sell(CarShop shop, CarType type, int amount) {
 
     }
 }
