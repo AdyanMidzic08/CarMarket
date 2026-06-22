@@ -29,11 +29,11 @@ public class Asia extends CarShop {
                 adjustPrice(CarType.BYD, 1.20);
                 break;
             case 1:
-                System.out.println("[Asien] 🚢 Massenlieferung! Toyota +5 Stück.");
+                System.out.println("[Asien] Massenlieferung! Toyota +5 Stück.");
                 addStock(CarType.TOYOTA, 5);
                 break;
             case 2:
-                System.out.println("[Asien] 📉 Überproduktion! Alle Preise -10%.");
+                System.out.println("[Asien] Überproduktion! Alle Preise -10%.");
                 for (CarInventoryItem item : items) {
                     item.setCurrentPrice(item.getCurrentPrice() * 0.90);
                 }
