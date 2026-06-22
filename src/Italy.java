@@ -13,7 +13,6 @@ public class Italy extends CarShop {
     @Override
     public void rollPrices() {
         for (CarInventoryItem item : items) {
-            // Italienische Supersportwagen: ±20% Schwankung
             double change = 0.80 + random.nextDouble() * 0.4;
             item.setCurrentPrice(item.getBasePrice() * change);
         }
@@ -25,15 +24,15 @@ public class Italy extends CarShop {
         int event = random.nextInt(4);
         switch (event) {
             case 0:
-                System.out.println("[Italien] 🏆 Formel-1-Sieg! Ferrari Preis +25%.");
+                System.out.println("[Italien] Formel-1-Sieg! Ferrari Preis +25%.");
                 adjustPrice(CarType.FERRARI, 1.25);
                 break;
             case 1:
-                System.out.println("[Italien] 💥 Produktionsstopp! Lamborghini -1 Stück.");
+                System.out.println("[Italien] Produktionsstopp! Lamborghini -1 Stück.");
                 removeStock(CarType.LAMBORGHINI, 1);
                 break;
             case 2:
-                System.out.println("[Italien] 🌟 Neue Sonderedition! Lamborghini +30%.");
+                System.out.println("[Italien] Neue Sonderedition! Lamborghini +30%.");
                 adjustPrice(CarType.LAMBORGHINI, 1.30);
                 break;
             default:

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Game {
     private Player player;
-    private CarShop shop; // aktuell ausgewählter Shop
+    private CarShop shop;
     private CarShop[] shops;
     private int round;
     private static final int MAX_ROUNDS = 10;
@@ -14,16 +14,16 @@ public class Game {
         shop = shops[0];
         round = 1;
         System.out.println("===========================================");
-        System.out.println("   🚗  Willkommen beim Auto-Handelsspiel!  ");
+        System.out.println("      Willkommen beim Auto-Handelsspiel!  ");
         System.out.println("===========================================");
         System.out.printf("Du startest mit %d€. Ziel: Möglichst viel Gewinn in %d Runden!%n%n",
                 START_MONEY, MAX_ROUNDS);
     }
 
     public void startRound() {
-        System.out.println("\n╔══════════════════════════════╗");
-        System.out.printf( "║        RUNDE %2d / %2d          ║%n", round, MAX_ROUNDS);
-        System.out.println("╚══════════════════════════════╝");
+        System.out.println("\n================================");
+        System.out.printf( "=        RUNDE %2d / %2d          =%n", round, MAX_ROUNDS);
+        System.out.println("================================");
 
         // Alle Shops aktualisieren
         System.out.println("\n--- Marktbewegungen ---");
@@ -157,18 +157,18 @@ public class Game {
         int totalWealth = player.getMoney() + inventoryValue;
         int profit = totalWealth - START_MONEY;
 
-        System.out.println("\n╔══════════════════════════════════╗");
-        System.out.println("║         SPIELENDE - ERGEBNIS     ║");
-        System.out.println("╚══════════════════════════════════╝");
+        System.out.println("\n================================");
+        System.out.println("=         SPIELENDE - ERGEBNIS     =");
+        System.out.println("================================");
         System.out.printf("Bargeld:           %10d€%n", player.getMoney());
         System.out.printf("Inventarwert:      %10d€%n", inventoryValue);
         System.out.printf("Gesamtvermögen:    %10d€%n", totalWealth);
         System.out.printf("Gewinn/Verlust:    %10d€%n", profit);
         System.out.println();
-        if (profit > 500_000)       System.out.println("🏆 Legendärer Autohändler!");
-        else if (profit > 100_000)  System.out.println("🥇 Ausgezeichnet!");
-        else if (profit > 0)        System.out.println("🥈 Gut gemacht!");
-        else                        System.out.println("💸 Besser Glück beim nächsten Mal...");
+        if (profit > 500_000)       System.out.println("Legendärer Autohändler!");
+        else if (profit > 100_000)  System.out.println("Ausgezeichnet!");
+        else if (profit > 0)        System.out.println("Gut gemacht!");
+        else                        System.out.println("Besser Glück beim nächsten Mal...");
     }
 
     public static void main(String[] args) {

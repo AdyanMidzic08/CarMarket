@@ -21,7 +21,6 @@ public class Player {
         return 0;
     }
 
-    /** Kauft Autos vom Shop. Gibt true zurück wenn erfolgreich. */
     public boolean buy(CarShop shop, CarType type, int amount) {
         CarInventoryItem shopItem = shop.findItem(type);
         if (shopItem == null) {
@@ -38,7 +37,6 @@ public class Player {
 
         money -= charged;
 
-        // Zum Inventar hinzufügen
         boolean found = false;
         for (InventoryItem inv : inventory) {
             if (inv.getCarType() == type) {
@@ -54,7 +52,6 @@ public class Player {
         return true;
     }
 
-    /** Verkauft Autos an einen Shop. Gibt true zurück wenn erfolgreich. */
     public boolean sell(CarShop shop, CarType type, int amount) {
         int owned = getItemCount(type);
         if (owned < amount) {
@@ -66,7 +63,6 @@ public class Player {
 
         money += received;
 
-        // Aus Inventar entfernen
         inventory.removeIf(inv -> {
             if (inv.getCarType() == type) {
                 inv.setAmount(inv.getAmount() - amount);

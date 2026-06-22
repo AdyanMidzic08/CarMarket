@@ -13,7 +13,6 @@ public class France extends CarShop {
     @Override
     public void rollPrices() {
         for (CarInventoryItem item : items) {
-            // Französische Autos: ±15% Schwankung
             double change = 0.85 + random.nextDouble() * 0.3;
             item.setCurrentPrice(item.getBasePrice() * change);
         }
@@ -25,17 +24,17 @@ public class France extends CarShop {
         int event = random.nextInt(4);
         switch (event) {
             case 0:
-                System.out.println("[Frankreich] 🥖 Streik in Paris! Alle Preise -5%.");
+                System.out.println("[Frankreich] Streik in Paris! Alle Preise -5%.");
                 for (CarInventoryItem item : items) {
                     item.setCurrentPrice(item.getCurrentPrice() * 0.95);
                 }
                 break;
             case 1:
-                System.out.println("[Frankreich] 🏎️ Motorsport-Event! Peugeot Nachfrage steigt, +20%.");
+                System.out.println("[Frankreich] Motorsport-Event! Peugeot Nachfrage steigt, +20%.");
                 adjustPrice(CarType.PEUGEOT, 1.20);
                 break;
             case 2:
-                System.out.println("[Frankreich] 📦 Neue Lieferung! Peugeot +4 Stück.");
+                System.out.println("[Frankreich] Neue Lieferung! Peugeot +4 Stück.");
                 addStock(CarType.PEUGEOT, 4);
                 break;
             default:

@@ -48,7 +48,7 @@ public abstract class CarShop {
             System.out.println("[" + name + "] Wir kaufen dieses Auto hier nicht an.");
             return -1;
         }
-        int totalValue = (int)(item.getCurrentPrice() * amount * 0.9); // 10% Händlermarge
+        int totalValue = (int)(item.getCurrentPrice() * amount * 0.9);
         item.setStock(item.getStock() + amount);
         System.out.printf("[%s] Angekauft: %d x %s für insgesamt %d€%n", name, amount, type, totalValue);
         return totalValue;

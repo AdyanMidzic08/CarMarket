@@ -14,7 +14,6 @@ public class Germany extends CarShop {
     @Override
     public void rollPrices() {
         for (CarInventoryItem item : items) {
-            // Deutsche Autos: ±10% Schwankung
             double change = 0.9 + random.nextDouble() * 0.2;
             item.setCurrentPrice(item.getBasePrice() * change);
         }
@@ -26,16 +25,16 @@ public class Germany extends CarShop {
         int event = random.nextInt(4);
         switch (event) {
             case 0:
-                System.out.println("[Deutschland] 🏭 Exportboom! BMW und Audi-Preise steigen um 15%.");
+                System.out.println("[Deutschland] Exportboom! BMW und Audi-Preise steigen um 15%.");
                 adjustPrice(CarType.BMW, 1.15);
                 adjustPrice(CarType.AUDI, 1.15);
                 break;
             case 1:
-                System.out.println("[Deutschland] 🔧 Streik in Wolfsburg! Audi Bestand halbiert.");
+                System.out.println("[Deutschland] Streik in Wolfsburg! Audi Bestand halbiert.");
                 halveStock(CarType.AUDI);
                 break;
             case 2:
-                System.out.println("[Deutschland] 💰 Luxusnachfrage! Bugatti Preis +20%.");
+                System.out.println("[Deutschland] Luxusnachfrage! Bugatti Preis +20%.");
                 adjustPrice(CarType.BUGATTI, 1.20);
                 break;
             default:
