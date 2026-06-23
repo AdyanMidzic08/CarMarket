@@ -13,7 +13,6 @@ public class Asia extends CarShop {
     @Override
     public void rollPrices() {
         for (CarInventoryItem item : items) {
-            // Asiatische Autos: ±8% Schwankung (stabiler Markt)
             double change = 0.92 + random.nextDouble() * 0.16;
             item.setCurrentPrice(item.getBasePrice() * change);
         }
